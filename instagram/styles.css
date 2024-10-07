@@ -1,0 +1,262 @@
+/* Reset dan Pengaturan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, rgba(145, 106, 171, 0.6), rgba(251, 143, 143, 0.6), rgba(251, 218, 171, 0.6)); /* Gradasi tema Instagram dengan opasitas dikurangi */
+    color: #333333;
+    padding: 20px;
+    background-size: cover; /* Pastikan gradasi mencakup seluruh layar */
+    background-attachment: fixed; /* Membuat gradasi tetap saat di-scroll */
+    min-height: 100vh; /* Memastikan gradasi mencakup minimal 100% tinggi layar */
+}
+
+.container {
+    max-width: 800px; /* Maks lebar kontainer */
+    margin: 0 auto; /* Pusatkan kontainer */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* opacity: 0.8; Sedikit transparan agar latar belakang terlihat */
+}
+
+h1 {
+    text-align: center;
+    color: #3897f0; /* Warna biru khas Instagram */
+    margin-bottom: 20px;
+}
+
+.upload-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="file"] {
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    max-width: 100%; /* Maks lebar kontainer */
+    background-color: #fff;
+}
+
+button {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px; /* Maks lebar pada layar besar */
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#checkUnfollow {
+    background-color: #3897f0; /* Warna biru khas Instagram */
+}
+
+#resetAll {
+    background-color: #e4405f; /* Warna merah khas Instagram */
+}
+
+#filterAZ, #filterZA {
+    background-color: #f3f3f3;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #3897f0;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+a {
+    color: #3897f0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries untuk Responsif */
+@media (min-width: 600px) {
+    body {
+        padding: 40px;
+    }
+
+    input[type="file"], button {
+        width: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .upload-section {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    input[type="file"] {
+        flex: 1 1 calc(50% - 20px); /* 50% lebar dengan jarak antar elemen */
+    }
+
+    button {
+        max-width: none; /* Hapus batas lebar maksimum pada layar besar */
+    }
+}
+/* Responsif pada layar lebar */
+.upload-section {
+    display: flex;
+    flex-direction: column; /* Default untuk mobile */
+    gap: 10px;
+}
+
+@media (min-width: 791px) {
+    .upload-section {
+        flex-direction: row; /* Ubah arah menjadi horizontal pada layar lebih lebar */
+        justify-content: space-between;
+        align-items: center; /* Pastikan elemen disejajarkan secara vertikal */
+    }
+
+    label {
+        flex: 1; /* Membuat label dan input sejajar pada layar lebar */
+        margin-right: 10px; /* Tambahkan sedikit jarak antara label dan input */
+    }
+
+    input[type="file"] {
+        flex: 2; /* Buat input lebih lebar daripada label */
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+
+/* dark/light theme */
+/* Default Light Theme */
+body.light-theme {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme .container {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+h1, p, label, button {
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+body.dark-theme button {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-theme button:hover {
+    background-color: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+body.dark-theme table, body.dark-theme th, body.dark-theme td {
+    border-color: #555;
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+    .upload-section {
+        display: flex;
+        flex-direction: column;
+    }
+}

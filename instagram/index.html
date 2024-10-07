@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Unfollow Checker</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="light-theme">
+    <div class="container">
+        <h1>Instagram Unfollow Checker</h1>
+        <p>Upload your Instagram followers and following data (JSON or HTML format)</p>
+
+        <div class="upload-section">
+            <label for="followers">Upload Followers File:</label>
+            <input type="file" id="followers" accept=".json, .html" />
+
+            <label for="following">Upload Following File:</label>
+            <input type="file" id="following" accept=".json, .html" />
+        </div>
+
+        <button id="checkUnfollow">Check Who Doesn't Follow Back</button>
+        <button id="resetAll">Reset All Data</button>
+        <button id="filterAZ">Sort A-Z</button>
+        <button id="filterZA">Sort Z-A</button>
+
+        <h2>People Who Don't Follow You Back:</h2>
+        <table id="result">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Instagram</th>
+                    <th>Lihat Profil</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Switch for Dark/Light Theme -->
+        <button id="themeSwitch">Switch to Dark Theme</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
