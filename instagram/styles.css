@@ -7,7 +7,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, rgba(145, 106, 171, 0.6), rgba(251, 143, 143, 0.6), rgba(251, 218, 171, 0.6)); /* Gradasi tema Instagram dengan opasitas dikurangi */
+    background: 
+        url('image/bg1.jpg'); 
     color: #333333;
     padding: 20px;
     background-size: cover; /* Pastikan gradasi mencakup seluruh layar */
@@ -27,7 +28,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #3897f0; /* Warna biru khas Instagram */
+    color: #006f1c; /* Warna biru khas Instagram */
     margin-bottom: 20px;
 }
 
@@ -73,18 +74,82 @@ button:hover {
     opacity: 0.9;
 }
 
+.button-container {
+    display: flex; /* Menggunakan flexbox */
+    justify-content: space-between; /* Menyebar tombol secara merata */
+    align-items: center; /* Menyelaraskan tombol di tengah secara vertikal */
+    gap: 10px; /* Jarak antar tombol */
+    margin-top: 20px; /* Jarak atas dari upload-section */
+}
+
 #checkUnfollow {
-    background-color: #3897f0; /* Warna biru khas Instagram */
+    background-color: #006f1c; /* Warna hijau khas Instagram */
+    color: #ffffff; /* Warna teks putih untuk kontras */
+    border: none; /* Menghilangkan border default */
+    padding: 10px 15px; /* Jarak dalam tombol */
+    cursor: pointer; /* Menunjukkan kursor pointer saat hover */
 }
 
 #resetAll {
-    background-color: #e4405f; /* Warna merah khas Instagram */
+    background-color: #d30027; /* Warna merah khas Instagram */
+    color: #ffffff; /* Warna teks putih untuk kontras */
+    border: none; /* Menghilangkan border default */
+    padding: 10px 15px; /* Jarak dalam tombol */
+    cursor: pointer; /* Menunjukkan kursor pointer saat hover */
 }
 
-#filterAZ, #filterZA {
-    background-color: #f3f3f3;
-    color: #333;
+/* Tambahan styling untuk tombol filter */
+.dropdown {
+    position: relative; /* Posisi relatif untuk dropdown */
+    display: inline-block; /* Tampilkan dropdown dalam baris yang sama */
 }
+
+.dropbtn {
+    background-color: transparent; /* Warna latar belakang tombol */
+    color: #006f1c; /* Warna teks tombol */
+    padding: 10px 15px; /* Padding untuk tombol */
+    font-size: 16px; /* Ukuran font */
+    border: 2px solid #006f1c; /* Border berwarna
+    border-radius: 5px; /* Sudut melengkung */
+    cursor: pointer; /* Kursor berubah menjadi pointer */
+    transition: background-color 0.3s, color 0.3s; /* Efek transisi untuk warna latar belakang */
+}
+
+.dropbtn:hover {
+    background-color: #006f1c; /* Warna latar belakang saat hover */
+    color: white;
+}
+
+.dropdown-content {
+    display: none; /* Sembunyikan konten dropdown secara default */
+    position: absolute; /* Posisi absolut untuk dropdown */
+    background-color: rgba(255, 255, 255, 0.8); /* Ubah latar belakang menjadi transparan */
+    min-width: 150px; /* Lebar minimum untuk dropdown */
+   
+    box-shadow: none; /* Hilangkan bayangan */
+    z-index: 1; /* Mengatur z-index untuk menampilkan di atas */
+    border-radius: 5px; /* Sudut melengkung untuk dropdown */
+}
+
+.dropdown-content button {
+    color: #006f1c; /* Warna teks untuk tombol dalam dropdown */
+    padding: 12px 16px; /* Padding untuk tombol dalam dropdown */
+    text-align: left; /* Rata kiri untuk teks */
+    border: none; /* Hilangkan border */
+    background: transparent; /* Latar belakang transparan */
+    cursor: pointer; /* Kursor berubah menjadi pointer */
+    width: 100%; /* Lebar penuh */
+    transition: background-color 0.3s; /* Efek transisi untuk warna latar belakang */
+}
+
+.dropdown-content button:hover {
+    background-color: #f2fff6; /* Warna latar belakang saat hover pada tombol dropdown */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Tampilkan dropdown saat hover */
+}
+
 
 table {
     width: 100%;
@@ -102,7 +167,7 @@ th, td {
 }
 
 th {
-    background-color: #3897f0;
+    background-color: #006f1c;
     color: #fff;
 }
 
@@ -115,7 +180,7 @@ tr:hover {
 }
 
 a {
-    color: #3897f0;
+    color: #006f1c;
     text-decoration: none;
 }
 
@@ -132,6 +197,10 @@ a:hover {
     input[type="file"], button {
         width: auto;
     }
+    button {
+        width: 100%; /* Membuat tombol memenuhi lebar kontainer pada layar kecil */
+        max-width: 300px; /* Ukuran maksimum untuk tombol saat di layar kecil */
+    }
 }
 
 @media (min-width: 768px) {
@@ -147,7 +216,8 @@ a:hover {
     }
 
     button {
-        max-width: none; /* Hapus batas lebar maksimum pada layar besar */
+        width: 100%; /* Membuat tombol memenuhi lebar kontainer pada layar kecil */
+        max-width: 300px; /* Ukuran maksimum untuk tombol saat di layar kecil */
     }
 }
 /* Responsif pada layar lebar */
@@ -172,11 +242,19 @@ a:hover {
     input[type="file"] {
         flex: 2; /* Buat input lebih lebar daripada label */
     }
+    button {
+        width: 100%; /* Membuat tombol memenuhi lebar kontainer pada layar kecil */
+        max-width: 360px; /* Ukuran maksimum untuk tombol saat di layar kecil */
+    }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
     .container {
         max-width: 900px;
+    }
+    button {
+        width: 100%; /* Membuat tombol memenuhi lebar kontainer pada layar kecil */
+        max-width: 500px; /* Ukuran maksimum untuk tombol saat di layar kecil */
     }
 }
 

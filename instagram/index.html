@@ -9,7 +9,7 @@
 <body class="light-theme">
     <div class="container">
         <h1>Instagram Unfollow Checker</h1>
-        <p>Upload your Instagram followers and following data (JSON or HTML format)</p>
+        <p>Unggah data Followers dan Following Instagram kamu (format JSON atau HTML)</p>
 
         <div class="upload-section">
             <label for="followers">Upload Followers File:</label>
@@ -19,12 +19,21 @@
             <input type="file" id="following" accept=".json, .html" />
         </div>
 
-        <button id="checkUnfollow">Check Who Doesn't Follow Back</button>
-        <button id="resetAll">Reset All Data</button>
-        <button id="filterAZ">Sort A-Z</button>
-        <button id="filterZA">Sort Z-A</button>
+        <div class="button-container">
+            <button id="checkUnfollow">Temukan</button>
+            <button id="resetAll">Mulai Ulang</button>
+        </div>
 
-        <h2>People Who Don't Follow You Back:</h2>
+        <div class="button-container">
+        <h2>Orang yang tidak Follback:</h2>
+        <div class="dropdown">
+            <button class="dropbtn">Sort</button>
+            <div class="dropdown-content">
+                <button id="filterAZ">A-Z</button>
+                <button id="filterZA">Z-A</button>
+            </div>
+        </div>
+    </div>
         <table id="result">
             <thead>
                 <tr>
@@ -37,7 +46,7 @@
         </table>
 
         <!-- Switch for Dark/Light Theme -->
-        <button id="themeSwitch">Switch to Dark Theme</button>
+        <!-- <button id="themeSwitch">Switch to Dark Theme</button> -->
     </div>
 
     <script src="script.js"></script>
